@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Showcase IDE</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="ide-container">
+    <!-- Sidebar -->
+    <div class="explorer">
+      <h3>Explorer</h3>
+      <ul>
+        <li data-project="welcome" class="active">Welcome Page</li>
+        <li data-project="static">Static Page</li>
+        <li data-project="flutter">Flutter Emulator</li>
+        <li data-project="blog">Blog Page</li>
+      </ul>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Tabs -->
+      <div class="tabs">
+        <div class="tab active" data-project="welcome">
+          Welcome Page <span class="close-tab">&times;</span>
+        </div>
+      </div>
+    
+      <!-- Add this new section for Flutter -->
+      <div data-project="flutter" style="display: none;">
+        <div class="flutter-container">
+          <div class="flutter-editor">
+            <h2>Flutter Project</h2>
+            <p>This is where your Flutter code will go.</p>
+          </div>
+          
+          <div class="flutter-emulator">
+            <div class="emulator-header">
+              <span class="emulator-title">Flutter Web Preview</span>
+              <div class="emulator-controls">
+                <button class="minimize">−</button>
+                <button class="maximize">□</button>
+                <button class="close">×</button>
+              </div>
+            </div>
+            
+            <div class="phone-frame">
+              <div class="phone-screen">
+                <!-- Flutter app preview here -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content-area">
+        <!-- Welcome page content -->
+        <div data-project="welcome">
+          <h2>Welcome to My Project Showcase</h2>
+          <p>This is the default Welcome Page. Use the Explorer to the left to navigate through the projects.</p>
+        </div>
+
+        <!-- Flutter page content - THIS MIGHT BE THE ISSUE -->
+        <div data-project="flutter" style="display: none;">
+          <div class="flutter-container">
+            <div class="flutter-editor">
+              <h2>Flutter Project</h2>
+              <p>This is where your Flutter code will go.</p>
+            </div>
+            
+            <div class="flutter-emulator">
+              <div class="emulator-header">
+                <span class="emulator-title">Flutter Web Preview</span>
+                <div class="emulator-controls">
+                  <button class="minimize">−</button>
+                  <button class="maximize">□</button>
+                  <button class="close">×</button>
+                </div>
+              </div>
+              
+              <div class="phone-frame">
+                <div class="phone-screen">
+                  <!-- Flutter app preview here -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
