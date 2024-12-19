@@ -101,7 +101,7 @@ body {
   margin-right: 1px;  /* Small gap between tabs */
   background: #21222c; /* Darker background for inactive tabs */
   color: #f8f8f2;
-  cursor: pointer;
+  cursor: default;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   display: flex;
