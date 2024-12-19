@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tabsContainer.querySelectorAll(".tab").forEach((tab) => {
           tab.classList.remove("active");
       });
-
+      
       // Activate the selected tab
       const tab = openTabs.get(projectId);
       if (tab) {
