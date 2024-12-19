@@ -74,22 +74,26 @@ document.addEventListener("DOMContentLoaded", () => {
       tab.addEventListener("click", () => activateTab(projectId));
   }
 
-  function activateTab(projectId) {
-      console.log("Activating tab:", projectId);
-      // Deactivate all tabs
-      tabsContainer.querySelectorAll(".tab").forEach((tab) => {
-          tab.classList.remove("active");
-      });
-      
-      // Activate the selected tab
-      const tab = openTabs.get(projectId);
-      if (tab) {
-          tab.classList.add("active");
-      }
+    function activateTab(projectId) {
+        tabsContainer.querySelectorAll(".tab").forEach((tab) => {
+            tab.classList.remove("active");
+        });
 
-      // Load content for the selected tab
-      fetchContent(projectId);
-  }
+        const tab = openTabs.get(projectId);
+        if (tab) {
+            tab.classList.add("active");
+        }
+
+        explorerItems.forEach(item => {
+            item.classList.remove("active");
+            if (item.dataset.project === projectId) {
+                item.classList.add("active");
+            }
+        });
+
+        fetchContent(projectId);
+    }
+
 
   function removeTab(projectId) {
       const tab = openTabs.get(projectId);
